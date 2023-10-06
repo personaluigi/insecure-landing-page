@@ -1,0 +1,116 @@
+@media screen and (max-width: 1199px) {
+    .header {
+        padding: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 58px;
+    }
+
+    .header-active {
+        z-index: 1000;
+        width: 100%;
+        position:fixed;
+        background-color: white;
+    }
+
+    #btn-menu {
+        border: 1px solid black;
+        padding: 4px;
+        width: 34px;
+        height: 32px;
+        background: none;
+        display: flex;
+        transition: .5s ease-in-out;
+    }
+
+    #btn-menu.active {
+        transform: rotate(270deg);
+    }
+
+    #hamburguer {
+        width: 24px;
+        border-top: 2px solid black;
+        position: relative;
+    }
+
+    #hamburguer::before,
+    #hamburguer::after {
+        display: block;
+        content: '';
+        width: 24px;
+        height: 2px;
+        margin-top: 8px;
+        background-color: black;
+        position: relative;
+        transition: .3s ease;
+    }
+
+    #btn-menu.active #hamburguer {
+        border: none;
+    }
+
+    #btn-menu.active #hamburguer::after {
+        transform: rotate(135deg);
+        top: -10px;
+    }
+
+    #btn-menu.active #hamburguer::before {
+        transform: rotate(-135deg);
+        margin-top: 10px;
+    }
+
+    #nav {
+        z-index: 1000;
+        overflow: hidden;
+        width: 100vw;
+        height: 0;
+        background-color: hsl(270, 9%, 17%);
+        position: fixed;
+        top: 58px;
+        left: 0;
+        transition: .5s ease-in-out;
+    }
+
+    #nav.active {
+        height: calc(100vh - 58px);
+    }
+
+    #menu {
+        z-index: 1000;
+        margin-top: 4rem;
+        text-align: center;
+    }
+
+    #menu>li {
+        list-style: none;
+    }
+
+    #menu>li>a {
+        display: block;
+        padding: 15px 0;
+        margin-bottom: .7rem;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: white;
+    }
+
+    #nav>button {
+        display: block;
+        margin: auto;
+        width: 80%;
+        padding: 10px;
+        font-size: 1.8rem;
+        color: white;
+        background-color: transparent;
+        border: 1px solid white;
+    }
+
+    #bg-pattern-mobile-nav {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+}
